@@ -9,6 +9,15 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    // Mark: Properties / Outlets
+    
+    @IBOutlet weak var textField: UITextField!
+    
+    
+    //Mark: Initializer
+    
+    //Mark: Methods
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,5 +28,12 @@ class ViewController: UIViewController {
         
     }
 
+    // Get ready to segue to the yellow view controller
+    // Is called automatically when a segue is about to happen
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        segue.destination.navigationItem.title = textField.text
+    }
+    
 }
 
